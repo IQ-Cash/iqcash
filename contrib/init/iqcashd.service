@@ -1,0 +1,22 @@
+[Unit]
+Description=IQcash's distributed currency daemon
+After=network.target
+
+[Service]
+User=iqcashcore
+Group=iqcashcore
+
+Type=forking
+PIDFile=/var/lib/iqcashd/iqcashd.pid
+ExecStart=/usr/bin/iqcashd -daemon -pid=/var/lib/iqcashd/iqcashd.pid \
+-conf=/etc/iqcashcore/iqcash.conf -datadir=/var/lib/iqcashd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

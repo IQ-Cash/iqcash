@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[iqcash.qt-translation-012x]
+file_filter = src/qt/locale/iqcash_<lang>.ts
+source_file = src/qt/locale/iqcash_en.ts
+source_lang = en

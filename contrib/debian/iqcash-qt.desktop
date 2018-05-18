@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=IQcash
+Comment=IQcash P2P Cryptocurrency
+Comment[fr]=IQcash, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=IQcash, eşten eşe kriptografik sanal para birimi
+Exec=iqcash-qt %u
+Terminal=false
+Type=Application
+Icon=iqcash128
+MimeType=x-scheme-handler/iqcash;
+Categories=Office;Finance;

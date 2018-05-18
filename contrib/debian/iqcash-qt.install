@@ -1,0 +1,6 @@
+usr/local/bin/iqcash-qt usr/bin
+share/pixmaps/iqcash32.xpm usr/share/pixmaps
+share/pixmaps/iqcash16.xpm usr/share/pixmaps
+share/pixmaps/iqcash128.png usr/share/pixmaps
+debian/iqcash-qt.desktop usr/share/applications
+debian/iqcash-qt.protocol usr/share/kde4/services/

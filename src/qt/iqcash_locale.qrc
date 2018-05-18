@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/iqcash_bg.qm</file>
+        <file alias="de">locale/iqcash_de.qm</file>
+        <file alias="en">locale/iqcash_en.qm</file>
+        <file alias="es">locale/iqcash_es.qm</file>
+        <file alias="fi">locale/iqcash_fi.qm</file>
+        <file alias="fr">locale/iqcash_fr.qm</file>
+        <file alias="it">locale/iqcash_it.qm</file>
+        <file alias="ja">locale/iqcash_ja.qm</file>
+        <file alias="pl">locale/iqcash_pl.qm</file>
+        <file alias="pt">locale/iqcash_pt.qm</file>
+        <file alias="ru">locale/iqcash_ru.qm</file>
+        <file alias="sk">locale/iqcash_sk.qm</file>
+        <file alias="sv">locale/iqcash_sv.qm</file>
+        <file alias="vi">locale/iqcash_vi.qm</file>
+        <file alias="zh_CN">locale/iqcash_zh_CN.qm</file>
+        <file alias="zh_TW">locale/iqcash_zh_TW.qm</file>
+    </qresource>
+</RCC>
