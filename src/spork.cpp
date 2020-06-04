@@ -138,6 +138,7 @@ bool CSporkManager::IsSporkActive(int nSporkID)
             case SPORK_23_MN_PAYEE_VALIDATION:              r = SPORK_23_MN_PAYEE_VALIDATION_DEFAULT; break;
             case SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM:      r = SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM_DEFAULT; break;
             case SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE:    r = SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE_DEFAULT; break;
+            case SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED:   r = SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED_DEFAULT; break;
             default:
                 LogPrint("spork", "CSporkManager::IsSporkActive -- Unknown Spork ID %d\n", nSporkID);
                 r = 4070908800ULL; // 2099-1-1 i.e. off by default
@@ -167,6 +168,7 @@ int64_t CSporkManager::GetSporkValue(int nSporkID)
         case SPORK_23_MN_PAYEE_VALIDATION:              return SPORK_23_MN_PAYEE_VALIDATION_DEFAULT;
         case SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM:      return SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM_DEFAULT;
         case SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE:    return SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE_DEFAULT;
+        case SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED:   return SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED_DEFAULT;
         default:
             LogPrint("spork", "CSporkManager::GetSporkValue -- Unknown Spork ID %d\n", nSporkID);
             return -1;
@@ -188,6 +190,7 @@ int CSporkManager::GetSporkIDByName(std::string strName)
     if (strName == "SPORK_23_MN_PAYEE_VALIDATION")              return SPORK_23_MN_PAYEE_VALIDATION;
     if (strName == "SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM")      return SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM;
     if (strName == "SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE")    return SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE;
+    if (strName == "SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED")   return SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED;
 
     LogPrint("spork", "CSporkManager::GetSporkIDByName -- Unknown Spork name '%s'\n", strName);
     return -1;
@@ -208,6 +211,7 @@ std::string CSporkManager::GetSporkNameByID(int nSporkID)
         case SPORK_23_MN_PAYEE_VALIDATION:              return "SPORK_23_MN_PAYEE_VALIDATION";
         case SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM:      return "SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM";
         case SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE:    return "SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE";
+        case SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED:   return "SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED";
         default:
             LogPrint("spork", "CSporkManager::GetSporkNameByID -- Unknown Spork ID %d\n", nSporkID);
             return "Unknown";

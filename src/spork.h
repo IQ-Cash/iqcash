@@ -32,6 +32,7 @@ static const int SPORK_14_REQUIRE_SENTINEL_FLAG                         = 10013;
 static const int SPORK_23_MN_PAYEE_VALIDATION                           = 10023;
 static const int SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM                   = 10024;
 static const int SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE                 = 10025;
+static const int SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED                = 10026;
 
 static const int64_t SPORK_2_INSTANTSEND_ENABLED_DEFAULT                = 0;            // ON
 static const int64_t SPORK_3_INSTANTSEND_BLOCK_FILTERING_DEFAULT        = 0;            // ON
@@ -45,6 +46,7 @@ static const int64_t SPORK_14_REQUIRE_SENTINEL_FLAG_DEFAULT             = 407090
 static const int64_t SPORK_23_MN_PAYEE_VALIDATION_DEFAULT               = 4070908800ULL;// OFF
 static const int64_t SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM_DEFAULT       = 4000;
 static const int64_t SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE_DEFAULT     = 4070908800ULL;// OFF
+static const int64_t SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED_DEFAULT    = 6;
 
 extern std::map<uint256, CSporkMessage> mapSporks;
 extern CSporkManager sporkManager;
