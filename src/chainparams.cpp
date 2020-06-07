@@ -116,10 +116,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000031f02d4f");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000078a3b524ea4d4a");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000b4a6c3b045741d510710e3bf756e5c3ed14a902ffee8072ab7cf69e288b");
+        consensus.defaultAssumeValid = uint256S("0x00000000004231002637532f856e6c79afb39f0667204d8af9d555c693663920");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -172,12 +172,12 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      214, uint256S("0x0000060eb44fff2b19f6d9de2b1633cd0aee19a05b90f9d5c6497a1cb982a7e0"))
-            (      650, uint256S("0x000001be17b38a598ed3c624c100fe9ab71286f289fe9b53763ec235a94f9e14"))
-            (      798, uint256S("0x00000b4a6c3b045741d510710e3bf756e5c3ed14a902ffee8072ab7cf69e288b")),
+            (   190500, uint256S("0x00000000c801b5105d592e699a827dc8e688fc25d0b5ed2a4090e8532835820a"))
+            (   333000, uint256S("0x0000000061b2fe908e64d98c29ab98f23eff793412ecdb08b72db6fbb5fb3fa6"))
+            (   488675, uint256S("0x0000000003646c92e22a5fd16f2e3d617bc3ca7bc6351d6a7b05bba9a5d7a80d")),
 
-            1526604432, // * UNIX timestamp of last checkpoint block
-            822,        // * total number of transactions between genesis and last checkpoint
+            1592421372, // * UNIX timestamp of last checkpoint block
+            556738,     // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             1000        // * estimated number of transactions per day after checkpoint
         };
