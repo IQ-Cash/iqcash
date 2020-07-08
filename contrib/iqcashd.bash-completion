@@ -85,7 +85,7 @@ _iqcashd() {
             _filedir
             return 0
             ;;
-        getmempool|lockunspent|setgenerate)
+        getmempool|lockunspent)
             COMPREPLY=( $( compgen -W "true false" -- "$cur" ) )
             return 0
             ;;
