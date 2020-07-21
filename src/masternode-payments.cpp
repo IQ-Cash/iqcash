@@ -561,10 +561,10 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
     }
 
     // if we don't have at least MNPAYMENTS_SIGNATURES_REQUIRED signatures on a payee, approve whichever is the longest chain
-    if(nMaxSignatures < sporkManager.GetSporkValue(SPORK_26_MNPAYMENTS_SIGNATURES_REQUIRED)) return true;
+    if(nMaxSignatures < sporkManager.GetSporkValue(SPORK_27_MNPAYMENTS_SIGNATURES_REQUIRED)) return true;
 
     BOOST_FOREACH(CMasternodePayee& payee, vecPayees) {
-        if (payee.GetVoteCount() >= MNPAYMENTS_SIGNATURES_REQUIRED) {
+        if (payee.GetVoteCount() >= sporkManager.GetSporkValue(SPORK_27_MNPAYMENTS_SIGNATURES_REQUIRED)) {
             BOOST_FOREACH(CTxOut txout, txNew.vout) {
                 if (payee.GetPayee() == txout.scriptPubKey && nMasternodePayment == txout.nValue) {
                     LogPrint("mnpayments", "CMasternodeBlockPayees::IsTransactionValid -- Found required payment\n");
@@ -975,7 +975,7 @@ void CMasternodePayments::RequestLowDataPaymentBlocks(CNode* pnode, CConnman& co
         int nTotalVotes = 0;
         bool fFound = false;
         BOOST_FOREACH(CMasternodePayee& payee, it->second.vecPayees) {
-            if(payee.GetVoteCount() >= MNPAYMENTS_SIGNATURES_REQUIRED) {
+            if(payee.GetVoteCount() >= sporkManager.GetSporkValue(SPORK_27_MNPAYMENTS_SIGNATURES_REQUIRED)) {
                 fFound = true;
                 break;
             }
@@ -983,7 +983,7 @@ void CMasternodePayments::RequestLowDataPaymentBlocks(CNode* pnode, CConnman& co
         }
         // A clear winner (MNPAYMENTS_SIGNATURES_REQUIRED+ votes) was found
         // or no clear winner was found but there are at least avg number of votes
-        if(fFound || nTotalVotes >= (MNPAYMENTS_SIGNATURES_TOTAL + MNPAYMENTS_SIGNATURES_REQUIRED)/2) {
+        if(fFound || nTotalVotes >= (MNPAYMENTS_SIGNATURES_TOTAL + sporkManager.GetSporkValue(SPORK_27_MNPAYMENTS_SIGNATURES_REQUIRED))/2) {
             // so just move to the next block
             ++it;
             continue;
@@ -1033,7 +1033,7 @@ std::string CMasternodePayments::ToString() const
 
 bool CMasternodePayments::IsEnoughData()
 {
-    float nAverageVotes = (MNPAYMENTS_SIGNATURES_TOTAL + MNPAYMENTS_SIGNATURES_REQUIRED) / 2;
+    float nAverageVotes = (MNPAYMENTS_SIGNATURES_TOTAL + sporkManager.GetSporkValue(SPORK_27_MNPAYMENTS_SIGNATURES_REQUIRED)) / 2;
     int nStorageLimit = GetStorageLimit();
     return GetBlockCount() > nStorageLimit && GetVoteCount() > nStorageLimit * nAverageVotes;
 }
