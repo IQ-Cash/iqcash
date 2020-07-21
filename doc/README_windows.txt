@@ -1,4 +1,4 @@
-IQcash Core 0.8.3
+IQcash Core 0.8.4
 =====================
 
 Intro
