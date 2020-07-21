@@ -138,7 +138,7 @@ bool CSporkManager::IsSporkActive(int nSporkID)
             case SPORK_23_MN_PAYEE_VALIDATION:              r = SPORK_23_MN_PAYEE_VALIDATION_DEFAULT; break;
             case SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM:      r = SPORK_24_MN_PAYEE_VALIDATION_VAR_SUM_DEFAULT; break;
             case SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE:    r = SPORK_25_MN_PAYEE_VALIDATION_KEEPSCOPE_DEFAULT; break;
-            case SPORK_26_MN_PAYEE_VALIDATION_KEEPSCOPE:    r = SPORK_26_MN_PAYEE_VALIDATION_KEEPSCOPE_DEFAULT; break;
+            case SPORK_26_LEGACY_MNPAYMENTS_SIGNATURES:     r = SPORK_26_LEGACY_MNPAYMENTS_SIGNATURES_DEFAULT; break;
             case SPORK_27_MNPAYMENTS_SIGNATURES_REQUIRED:   r = SPORK_27_MNPAYMENTS_SIGNATURES_REQUIRED_DEFAULT; break;
             default:
                 LogPrint("spork", "CSporkManager::IsSporkActive -- Unknown Spork ID %d\n", nSporkID);
