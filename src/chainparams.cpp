@@ -116,7 +116,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000893ff55c2cff58");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000008aac42af967998");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x00000000004231002637532f856e6c79afb39f0667204d8af9d555c693663920");
@@ -172,14 +172,18 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (   333000, uint256S("0x0000000061b2fe908e64d98c29ab98f23eff793412ecdb08b72db6fbb5fb3fa6"))
             (   488675, uint256S("0x0000000003646c92e22a5fd16f2e3d617bc3ca7bc6351d6a7b05bba9a5d7a80d"))
             (   502220, uint256S("0x0000000002ee56102ece71ef4c25bf5d827e91b11496c8780feb4e80164e57ea"))
             (   506000, uint256S("0x0000000000362f00912c65bad54a6c834a519919eedf778fb8c17b6d834e832f"))
-            (   511300, uint256S("0x0000000004ad06dd7c0b47b7c997692a041653bab09c94b78bb3d4a29019b4f7")),
+            (   512250, uint256S("0x00000000019e9361ce8fcda75596610fd2f1105dd5a8e6112cb08c040a5abf43"))
+            (   512272, uint256S("0x000000000054c2967448fb57aa381adf0e10ee054614443efc9dde6d5e5d69fd"))
+            (   512273, uint256S("0x00000000000c905bc0a23a443fd89d4d95ee55f6e33c4b6b14d3e480aa167f97"))
+            (   512294, uint256S("0x0000000002aa3662db59420074a92009183dc0efa971b94b038707168a580002"))
+            (   514146, uint256S("0x00000000084ec08b90ce8ffbb358ebae040622bf146aa80cf2edb00737294de8"))
+            (   514300, uint256S("0x0000000000b175eadae4e346615ed39212bb4f14b847226c5b5b3d839cb62c46")),
 
-            1595314383, // * UNIX timestamp of last checkpoint block
-            584564,     // * total number of transactions between genesis and last checkpoint
+            1595692854, // * UNIX timestamp of last checkpoint block
+            588025,     // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             1000        // * estimated number of transactions per day after checkpoint
         };
